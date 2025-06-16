@@ -35,7 +35,7 @@ const pieCtx = document.getElementById('pie')
 window.myPie = new Chart(pieCtx, pieConfig)
 
 // Función para procesar el JSON
-countCommentsByHour = (data) => {
+const countCommentsByHour = (data) => {
 
   // Inicializar contadores por rango de horas
   const labels = ["0 a.m. - 8 a.m.", "8 a.m. - 16 p.m.", "16 p.m. - 0 a.m."];
@@ -69,7 +69,7 @@ countCommentsByHour = (data) => {
 }
 
 
-update = () => {
+const update = () => {
   fetch('/api/v1/landing')
     .then(response => response.json())
     .then(data => {
