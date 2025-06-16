@@ -31,16 +31,14 @@ function focusTrap(element) {
     if (!isTab) return
 
     if (e.shiftKey) {
-      if (document.activeElement === firstFocusableEl) {
-        lastFocusableEl.focus()
-        e.preventDefault()
-      }
-    } else {
-      if (document.activeElement === lastFocusableEl) {
-        firstFocusableEl.focus()
-        e.preventDefault()
-      }
-    }
+  if (document.activeElement === firstFocusableEl) {
+    lastFocusableEl.focus()
+    e.preventDefault()
+  }
+} else if (document.activeElement === lastFocusableEl) {
+  firstFocusableEl.focus()
+  e.preventDefault()
+}
   }
 
   element.addEventListener('keydown', handleKeyDown)
