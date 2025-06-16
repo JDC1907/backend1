@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+from dotenv import load_dotenv
+load_dotenv()
 
 from pathlib import Path
  # Importe los módulos firebase_admin y credentials
@@ -27,7 +29,8 @@ FIREBASE_CRED = credentials.Certificate(BASE_DIR / "keys/landing-key.json")
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-am@@#p*8r7iy$tto1%5fyh!ay1__y3s-*)%#-13a6tgb@jp!dv'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
