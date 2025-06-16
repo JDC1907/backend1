@@ -60,4 +60,3 @@ class LandingAPIDetail(APIView):
             return Response({"message": "Documento eliminado correctamente"}, status=status.HTTP_204_NO_CONTENT)
         else:
             return Response({"error": DOCUMENT_NOT_FOUND_MSG}, status=status.HTTP_404_NOT_FOUND)
-z
